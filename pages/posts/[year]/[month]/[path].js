@@ -48,13 +48,6 @@ function PostDetail({ data }) {
 export async function getServerSideProps(context) {
   const { path, month, year } = context.params;
 
-  if ((context?.req?.headers?.referer || "").indexOf("facebook.com") !== -1) {
-    context.res.setHeader("location", `${domain}${slug}`);
-    context.res.statusCode = 301;
-    context.res.end();
-    return { props: { data: {} } };
-  }
-
   // Fetch data from external API
   const data = await fetch(`${domain}${year}/${month}/${path}`)
     .then(function (response) {
