@@ -32,3 +32,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+    1	Tạo tài khoản GitHub
+
+Sau khi tạo xong thì gửi github để mình add vào repo ​​https://github.com/minhlq-0928/vercelblogspot
+Sau đó sẽ có email yêu cầu chấp nhận invite và fork repo này về github cá nhân
+
+    2	Tạo tài khoản vercel.com bằng tài khoản github vừa tạo
+
+    3. Deploy
+   Vào chọn New Project, Kết nối tới github và cho phép truy cập vào repo đã fork ở bước 1, khi deploy thì thêm biến NEXT_PUBLIC_DOMAIN_URL là domain của bạn
+   NEXT_PUBLIC_DOMAIN_URL=http://www.dogfull.com/
+
+    4. Link
+   Link sẽ có cấu trúc như sau, có thể dùng excel để replace link http://www.dogfull.com/2022/08/the-biggest-smile-on.html
+   => https://vercelblogspot.vercel.app/posts/2022/08/the-biggest-smile-on.html
+
+    Vác link vercel app đi share thôi
