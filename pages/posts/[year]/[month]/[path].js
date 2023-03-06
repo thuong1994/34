@@ -47,6 +47,17 @@ function PostDetail({ data }) {
 // This gets called on every request
 export async function getServerSideProps(context) {
   const { path, month, year } = context.params;
+  const referringURL = context.req.headers?.referer || null;
+  const fbclid = context.query.fbclid;
+
+  if ((referringURL && referringURL.indexOf("facebook.com") !== -1) || fbclid) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: `${domain}${year}/${month}/${encodeURI(path)}`,
+      },
+    };
+  }
 
   // Fetch data from external API
   const data = await fetch(`${domain}${year}/${month}/${path}`)
